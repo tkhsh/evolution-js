@@ -17,7 +17,11 @@ function drawWorld() {
 		}
 		world[y][100] = "\n";
 	}
-	document.getElementById("world").innerHTML = world.join("");
+	var worldText = "";
+	for(var y = 0; y < world.length; y++) {
+		worldText += world[y].join("");
+	}
+	document.getElementById("world").innerHTML = worldText;
 }
 
 function addPlants() {
