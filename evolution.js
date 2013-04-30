@@ -5,15 +5,19 @@ function skipDay() {
 function updateWorld() {
 	//一日分のシミュレーションを進める
 }
+//グローバル変数world
+
+
 function drawWorld() {
-	var cells = "";
+	var world = new Array();
 	for(var y = 0; y < 30; y++) {
+		world[y] = new Array();
 		for(var x = 0; x < 100; x++) {
-			cells += ".";
+			world[y][x] = ".";
 		}
-		cells += "<br>";
+		world[y][100] = "\n";
 	}
-	document.getElementById("world").innerHTML = cells;
+	document.getElementById("world").innerHTML = world.join("");
 }
 
 function addPlants() {
