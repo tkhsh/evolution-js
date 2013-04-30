@@ -1,5 +1,6 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
+	addPlants();
 }
 function updateWorld() {
 	//一日分のシミュレーションを進める
@@ -13,4 +14,15 @@ function drawWorld() {
 		cells += "\n";
 	}
 	document.getElementById("world").innerHTML = cells;
+}
+
+function addPlants() {
+	var tmp = document.getElementById("world").innerHTML;
+	var arrayWorld = tmp.split("");
+	var tmpNum = Math.floor(Math.random() * arrayWorld.length);
+	if(arrayWorld[tmpNum] == ".") {
+		arrayWorld[tmpNum] = "*";
+	}
+	var ans = arrayWorld.join("");
+	document.getElementById("world").innerHTML = ans;
 }
