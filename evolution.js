@@ -11,7 +11,7 @@ function drawWorld() {
 		for(var x = 0; x < 100; x++) {
 			cells += ".";
 		}
-		cells += "\n";
+		cells += "<br>";
 	}
 	document.getElementById("world").innerHTML = cells;
 }
