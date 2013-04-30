@@ -8,9 +8,9 @@ function drawWorld() {
 	var cells = "";
 	for(var y = 0; y < 30; y++) {
 		for(var x = 0; x < 100; x++) {
-			cells = cells.concat(".");
+			cells += ".";
 		}
-		cells = cells.concat("\n");
+		cells += "\n";
 	}
 	document.getElementById("world").innerHTML = cells;
 }
