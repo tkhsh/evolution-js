@@ -6,8 +6,8 @@ function updateWorld() {
 }
 function drawWorld() {
 	var cells = "";
-	for(var i = 0; i < 30; i++) {
-		for(var j = 0; j < 100; j++) {
+	for(var y = 0; y < 30; y++) {
+		for(var x = 0; x < 100; x++) {
 			cells = cells.concat(".");
 		}
 		cells = cells.concat("\n");
