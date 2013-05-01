@@ -19,7 +19,7 @@ for(var y = 0; y < 30; y++) {
 }
 
 function generateRandomNumber(min, max) {
-	return Math.floor(Math.random() * (max - min)) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 //animalコンストラクタの定義
