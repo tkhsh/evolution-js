@@ -14,6 +14,16 @@ for(var y = 0; y < 30; y++) {
 	plants[y] = new Array();
 }
 
+//animalコンストラクタの定義
+function animal(x, y, direction) {
+	this.positoinX = x;
+	this.positionY = y;
+	this.directionNumber = direction;
+}
+
+//グローバル変数animals
+var animals = new animal(50, 15, Math.floor(Math.random() * 7));
+
 function drawWorld() {
 	var world = new Array();
 	for(var y = 0; y < 30; y++) {
