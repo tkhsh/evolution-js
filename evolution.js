@@ -21,7 +21,7 @@ function generateRandomNumber(min, max) {
 
 //animalコンストラクタの定義
 function animal(x, y, direction) {
-	this.positoinX = x;
+	this.positionX = x;
 	this.positionY = y;
 	this.directionNumber = direction;
 }
@@ -44,7 +44,7 @@ function drawWorld() {
 	}
 	
 	//animalsを追加
-	world[animals.positionY][animals.positoinX] = "M";
+	world[animals.positionY][animals.positionX] = "M";
 	
 	//textを表示する処理
 	var worldText = "";
@@ -69,35 +69,35 @@ function addPlants() {
 function move(animal) {
 	switch(animal.directionNumber) {
 		case 0:
-			animal.positoinX += -1;
+			animal.positionX += -1;
 			animal.positionY += 1;
 			break;
 		case 1:
-			animal.positoinX += 0;
+			animal.positionX += 0;
 			animal.positionY += 1;
 			break;
 		case 2:
-			animal.positoinX += 1;
+			animal.positionX += 1;
 			animal.positionY += 1;
 			break;
 		case 3:
-			animal.positoinX += 1;
+			animal.positionX += 1;
 			animal.positionY += 0;
 			break;
 		case 4:
-			animal.positoinX += 1;
+			animal.positionX += 1;
 			animal.positionY += -1;
 			break;
 		case 5:
-			animal.positoinX += 0;
+			animal.positionX += 0;
 			animal.positionY += -1;
 			break;
 		case 6:
-			animal.positoinX += -1;
+			animal.positionX += -1;
 			animal.positionY += -1;
 			break;
 		case 7:
-			animal.positoinX += -1;
+			animal.positionX += -1;
 			animal.positionY += 0;
 			break;
 	}
