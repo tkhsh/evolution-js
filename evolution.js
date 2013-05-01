@@ -18,10 +18,16 @@ function drawWorld() {
 	for(var y = 0; y < 30; y++) {
 		world[y] = new Array();
 		for(var x = 0; x < 100; x++) {
-			world[y][x] = ".";
+			if(plants[y][x] == "*") {
+				world[y][x] = "*";
+			} else {
+				world[y][x] = ".";
+			}
 		}
 		world[y][100] = "\n";
 	}
+
+	//textを表示する処理
 	var worldText = "";
 	for(var y = 0; y < world.length; y++) {
 		worldText += world[y].join("");
