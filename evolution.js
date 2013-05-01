@@ -7,6 +7,7 @@ function updateWorld() {
 	//一日分のシミュレーションを進める
 	turn(animals);
 	move(animals);
+	eat(animals);
 	addPlants();
 }
 
@@ -143,5 +144,11 @@ function turn(animal) {
 			animal.directionNumber = i;
 			break;
 		}
+	}
+}
+
+function eat(animal) {
+	if(plants[animal.positionY][animal.positionX] == "*") {
+		plants[animal.positionY][animal.positionX] = "";
 	}
 }
