@@ -36,8 +36,14 @@ function drawWorld() {
 }
 
 function addPlants() {
+	//世界全体の植物
 	var numY = Math.floor(Math.random() * 30);
 	var numX = Math.floor(Math.random() * 100);
 	plants[numY][numX] = "*";
+
+	//ジャングルの植物
+	var jungleY = Math.floor(Math.random() * 10) + 10;
+	var jungleX = Math.floor(Math.random() * 10) + 45;
+	plants[jungleY][jungleX] = "*";
 	drawWorld();
 }
