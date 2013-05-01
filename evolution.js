@@ -1,12 +1,13 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
-	turn(animals);
-	move(animals);
-	addPlants();
+	updateWorld();
 	drawWorld();
 }
 function updateWorld() {
 	//一日分のシミュレーションを進める
+	turn(animals);
+	move(animals);
+	addPlants();
 }
 
 //グローバル変数plants
