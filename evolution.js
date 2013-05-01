@@ -27,6 +27,7 @@ function animal(x, y, direction) {
 	this.positionX = x;
 	this.positionY = y;
 	this.directionNumber = direction;
+	this.energy = 200;
 
 	//geneの初期化
 	var tmpGene = new Array(8);
