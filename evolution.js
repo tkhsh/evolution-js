@@ -5,8 +5,13 @@ function skipDay() {
 function updateWorld() {
 	//一日分のシミュレーションを進める
 }
-//グローバル変数world
 
+//グローバル変数plants
+var plants = new Array();
+//plantsの初期化
+for(var y = 0; y < 30; y++) {
+	plants[y] = new Array();
+}
 
 function drawWorld() {
 	var world = new Array();
@@ -25,12 +30,8 @@ function drawWorld() {
 }
 
 function addPlants() {
-	var tmp = document.getElementById("world").innerHTML;
-	var arrayWorld = tmp.split("");
-	var tmpNum = Math.floor(Math.random() * arrayWorld.length);
-	if(arrayWorld[tmpNum] == ".") {
-		arrayWorld[tmpNum] = "*";
-	}
-	var ans = arrayWorld.join("");
-	document.getElementById("world").innerHTML = ans;
+	var numY = Math.floor(Math.random() * 30);
+	var numX = Math.floor(Math.random() * 100);
+	plants[numY][numX] = "*";
+	drawWorld();
 }
