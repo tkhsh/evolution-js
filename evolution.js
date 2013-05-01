@@ -1,5 +1,6 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
+	move(animals);
 	addPlants();
 	drawWorld();
 }
@@ -36,12 +37,15 @@ function drawWorld() {
 			if(plants[y][x] == "*") {
 				world[y][x] = "*";
 			} else {
-				world[y][x] = ".";
+				world[y][x] = " ";
 			}
 		}
 		world[y][100] = "\n";
 	}
-
+	
+	//animalsを追加
+	world[animals.positionY][animals.positoinX] = "M";
+	
 	//textを表示する処理
 	var worldText = "";
 	for(var y = 0; y < world.length; y++) {
