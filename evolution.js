@@ -61,3 +61,40 @@ function addPlants() {
 	var jungleX = generateRandomNumber(45, 54);
 	plants[jungleY][jungleX] = "*";
 }
+
+function move(animal) {
+	switch(animal.directionNumber) {
+		case 0:
+			animal.positoinX += -1;
+			animal.positionY += 1;
+			break;
+		case 1:
+			animal.positoinX += 0;
+			animal.positionY += 1;
+			break;
+		case 2:
+			animal.positoinX += 1;
+			animal.positionY += 1;
+			break;
+		case 3:
+			animal.positoinX += 1;
+			animal.positionY += 0;
+			break;
+		case 4:
+			animal.positoinX += 1;
+			animal.positionY += -1;
+			break;
+		case 5:
+			animal.positoinX += 0;
+			animal.positionY += -1;
+			break;
+		case 6:
+			animal.positoinX += -1;
+			animal.positionY += -1;
+			break;
+		case 7:
+			animal.positoinX += -1;
+			animal.positionY += 0;
+			break;
+	}
+}
