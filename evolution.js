@@ -114,7 +114,7 @@ function move(animal) {
 	}
 
 	//エネルギーの消費
-	animal.energy += -1;
+	animal.energy -= 1;
 
 	//世界の端を判定
 	if(animal.positionX < 0) {
