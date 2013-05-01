@@ -1,6 +1,7 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
 	addPlants();
+	drawWorld();
 }
 function updateWorld() {
 	//一日分のシミュレーションを進める
@@ -45,5 +46,4 @@ function addPlants() {
 	var jungleY = Math.floor(Math.random() * 10) + 10;
 	var jungleX = Math.floor(Math.random() * 10) + 45;
 	plants[jungleY][jungleX] = "*";
-	drawWorld();
 }
