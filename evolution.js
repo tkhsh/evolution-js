@@ -101,4 +101,18 @@ function move(animal) {
 			animal.positionY += 0;
 			break;
 	}
+
+	//世界の端を判定
+	if(animal.positionX < 0) {
+		animal.positionX = 99;
+	}
+	if(animal.positionX > 99) {
+		animal.positionX = 0;
+	}
+	if(animal.positionY < 0) {
+		animal.positionY = 29;
+	}
+	if(animal.positionY > 29) {
+		animal.positionY = 0;
+	}
 }
