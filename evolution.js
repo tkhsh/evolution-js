@@ -14,6 +14,10 @@ for(var y = 0; y < 30; y++) {
 	plants[y] = new Array();
 }
 
+function generateRandomNumber(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
 //animalコンストラクタの定義
 function animal(x, y, direction) {
 	this.positoinX = x;
@@ -22,7 +26,7 @@ function animal(x, y, direction) {
 }
 
 //グローバル変数animals
-var animals = new animal(50, 15, Math.floor(Math.random() * 7));
+var animals = new animal(50, 15, generateRandomNumber(0, 7));
 
 function drawWorld() {
 	var world = new Array();
@@ -48,12 +52,12 @@ function drawWorld() {
 
 function addPlants() {
 	//世界全体の植物
-	var worldY = Math.floor(Math.random() * 30);
-	var worldX = Math.floor(Math.random() * 100);
+	var worldY = generateRandomNumber(0, 29);
+	var worldX = generateRandomNumber(0, 99);
 	plants[worldY][worldX] = "*";
 
 	//ジャングルの植物
-	var jungleY = Math.floor(Math.random() * 10) + 10;
-	var jungleX = Math.floor(Math.random() * 10) + 45;
+	var jungleY = generateRandomNumber(10, 19);
+	var jungleX = generateRandomNumber(45, 54);
 	plants[jungleY][jungleX] = "*";
 }
