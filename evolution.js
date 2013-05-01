@@ -1,5 +1,6 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
+	turn(animals);
 	move(animals);
 	addPlants();
 	drawWorld();
@@ -121,5 +122,25 @@ function move(animal) {
 	}
 	if(animal.positionY > 29) {
 		animal.positionY = 0;
+	}
+}
+
+//遺伝子に応じて動物の向きを変える
+function turn(animal) {
+	//分母の計算
+	var sum = 0;
+	for(var i = 0; i < 8; i++) {
+		sum += animal.gene[i];
+	}
+
+	//確立の判定
+	var rndNum = generateRandomNumber(0, sum);
+	var tmp = 0;
+	for(var i = 0; i < 8; i++) {
+		tmp += animal.gene[i];
+		if(rndNum <= tmp) {
+			animal.directionNumber = i;
+			break;
+		}
 	}
 }
