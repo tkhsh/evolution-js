@@ -24,6 +24,13 @@ function animal(x, y, direction) {
 	this.positionX = x;
 	this.positionY = y;
 	this.directionNumber = direction;
+
+	//geneの初期化
+	var tmpGene = new Array(8);
+	for(var i = 0; i < 8; i++) {
+		tmpGene[i] = generateRandomNumber(1, 10);
+	}
+	this.gene = tmpGene;
 }
 
 //グローバル変数animals
