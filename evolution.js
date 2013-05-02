@@ -183,7 +183,7 @@ function eat(animal) {
 function reproduce(animal) {
 	if(animal.energy >= 200) {
 		animal.energy /= 2;
-		var chlid = new animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
+		var child = new animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
 		animals.push(child);
 	}
 }
