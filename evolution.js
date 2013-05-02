@@ -141,7 +141,7 @@ function turn(animal) {
 	}
 
 	//確率の判定
-	var rndNum = generateRandomNumber(0, sum);
+	var rndNum = generateRandomNumber(1, sum);
 	var tmp = 0;
 	for(var i = 0; i < 8; i++) {
 		tmp += animal.gene[i];
