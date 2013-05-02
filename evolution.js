@@ -5,9 +5,9 @@ function skipDay() {
 }
 function updateWorld() {
 	//一日分のシミュレーションを進める
-	turn(animals);
-	move(animals);
-	eat(animals);
+	turn(animals[0]);
+	move(animals[0]);
+	eat(animals[0]);
 	addPlants();
 }
 
@@ -39,7 +39,8 @@ function animal(x, y, direction) {
 }
 
 //グローバル変数animals
-var animals = new animal(50, 15, generateRandomNumber(0, 7));
+var animals = new Array();
+animals[0] = new animal(50, 15, generateRandomNumber(0, 7));
 
 function drawWorld() {
 	var world = new Array();
@@ -56,7 +57,7 @@ function drawWorld() {
 	}
 	
 	//animalsを追加
-	world[animals.positionY][animals.positionX] = "M";
+	world[animals[0].positionY][animals[0].positionX] = "M"; //TODO: 複数のanimalsを追加できるようにする。
 	
 	//textを表示する処理
 	var worldText = "";
