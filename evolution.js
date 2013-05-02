@@ -7,17 +7,21 @@ function updateWorld() {
 	//一日分のシミュレーションを進める
 
 	//エネルギーが0になった動物は餓死する
-	if(typeof animals[0] != 'undefined'){
-		if(animals[0].energy <= 0) {
-			animals[0] = undefined;
+	for(var i = 0; i < animals.length; i++) {
+		if(typeof animals[i] != 'undefined'){
+			if(animals[i].energy <= 0) {
+				animals[i] = undefined;
+			}
 		}
 	}
 
-	if(typeof animals[0] != 'undefined') {
-		turn(animals[0]);
-		move(animals[0]);
-		reproduce(animals[0])
-		eat(animals[0]);
+	for(var i = 0; i < animals.length; i++) {
+		if(typeof animals[i] != 'undefined') {
+			turn(animals[i]);
+			move(animals[i]);
+			reproduce(animals[i])
+			eat(animals[i]);
+		}
 	}
 	addPlants();
 }
@@ -68,8 +72,10 @@ function drawWorld() {
 	}
 	
 	//animalsを追加
-	if(typeof animals[0] != 'undefined'){
-		world[animals[0].positionY][animals[0].positionX] = "M"; //TODO: 複数のanimalsを追加できるようにする。
+	for(var i = 0; i < animals.length; i++) {
+		if(typeof animals[i] != 'undefined'){
+			world[animals[i].positionY][animals[i].positionX] = "M";
+		}
 	}
 
 	//textを表示する処理
