@@ -34,11 +34,11 @@ function generateRandomNumber(min, max) {
 }
 
 //animalコンストラクタの定義
-function animal(x, y, direction) {
+function animal(x, y, direction, initialEnergy) {
 	this.positionX = x;
 	this.positionY = y;
 	this.directionNumber = direction;
-	this.energy = 200;
+	this.energy = initialEnergy;
 
 	//geneの初期化
 	var tmpGene = new Array(8);
@@ -50,7 +50,7 @@ function animal(x, y, direction) {
 
 //グローバル変数animals
 var animals = new Array();
-animals[0] = new animal(50, 15, generateRandomNumber(0, 7));
+animals[0] = new animal(50, 15, generateRandomNumber(0, 7), 200);
 
 function drawWorld() {
 	var world = new Array();
