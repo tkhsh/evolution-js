@@ -171,3 +171,12 @@ function eat(animal) {
 		animal.energy += 80;
 	}
 }
+
+//動物たちを繁殖させる
+function reproduce(animal) {
+	if(animal.energy >= 200) {
+		//TODO: childと親のエネルギーをもともとの親のエネルギーの半分にする
+		var chlid = new animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7));
+		animals.push(child);
+	}
+}
