@@ -187,8 +187,8 @@ function reproduce(animal) {
 		//遺伝子の突然変異
 		var tmpSelectedGene = generateRandomNumber(0, 7);
 		child.gene[tmpSelectedGene] += generateRandomNumber(-1, 1);
-		if(child.gene < 0) {
-			child.gene = 0;
+		if(child.gene[tmpSelectedGene] < 0) {
+			child.gene[tmpSelectedGene] = 0;
 		}
 
 		animals.push(child);
