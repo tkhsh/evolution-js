@@ -8,20 +8,16 @@ function updateWorld() {
 
 	//エネルギーが0になった動物は餓死する
 	for(var i = 0; i < animals.length; i++) {
-		if(typeof animals[i] != 'undefined'){
-			if(animals[i].energy <= 0) {
-				animals[i] = undefined;
-			}
+		if(animals[i].energy <= 0) {
+			animals.splice(i, 1);
 		}
 	}
 
 	for(var i = 0; i < animals.length; i++) {
-		if(typeof animals[i] != 'undefined') {
-			turn(animals[i]);
-			move(animals[i]);
-			reproduce(animals[i])
-			eat(animals[i]);
-		}
+		turn(animals[i]);
+		move(animals[i]);
+		reproduce(animals[i])
+		eat(animals[i]);
 	}
 	addPlants();
 }
@@ -73,9 +69,7 @@ function drawWorld() {
 	
 	//animalsを追加
 	for(var i = 0; i < animals.length; i++) {
-		if(typeof animals[i] != 'undefined'){
-			world[animals[i].positionY][animals[i].positionX] = "M";
-		}
+		world[animals[i].positionY][animals[i].positionX] = "M";
 	}
 
 	//textを表示する処理
