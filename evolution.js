@@ -16,6 +16,7 @@ function updateWorld() {
 	if(typeof animals[0] != 'undefined') {
 		turn(animals[0]);
 		move(animals[0]);
+		reproduce(animals[0])
 		eat(animals[0]);
 	}
 	addPlants();
