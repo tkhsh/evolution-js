@@ -175,8 +175,8 @@ function eat(animal) {
 //動物たちを繁殖させる
 function reproduce(animal) {
 	if(animal.energy >= 200) {
-		//TODO: childと親のエネルギーをもともとの親のエネルギーの半分にする
-		var chlid = new animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7));
+		animal.energy /= 2;
+		var chlid = new animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
 		animals.push(child);
 	}
 }
