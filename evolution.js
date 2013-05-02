@@ -5,9 +5,19 @@ function skipDay() {
 }
 function updateWorld() {
 	//一日分のシミュレーションを進める
-	turn(animals[0]);
-	move(animals[0]);
-	eat(animals[0]);
+
+	//エネルギーが0になった動物は餓死する
+	if(typeof animals[0] != 'undefined'){
+		if(animals[0].energy <= 0) {
+			animals[0] = undefined;
+		}
+	}
+
+	if(typeof animals[0] != 'undefined') {
+		turn(animals[0]);
+		move(animals[0]);
+		eat(animals[0]);
+	}
 	addPlants();
 }
 
@@ -57,8 +67,10 @@ function drawWorld() {
 	}
 	
 	//animalsを追加
-	world[animals[0].positionY][animals[0].positionX] = "M"; //TODO: 複数のanimalsを追加できるようにする。
-	
+	if(typeof animals[0] != 'undefined'){
+		world[animals[0].positionY][animals[0].positionX] = "M"; //TODO: 複数のanimalsを追加できるようにする。
+	}
+
 	//textを表示する処理
 	var worldText = "";
 	for(var y = 0; y < world.length; y++) {
