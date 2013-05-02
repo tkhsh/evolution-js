@@ -16,8 +16,8 @@ function updateWorld() {
 	for(var i = 0; i < animals.length; i++) {
 		turn(animals[i]);
 		move(animals[i]);
-		reproduce(animals[i])
 		eat(animals[i]);
+		reproduce(animals[i]);
 	}
 	addPlants();
 }
