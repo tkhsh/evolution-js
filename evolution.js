@@ -1,6 +1,11 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
-	updateWorld();
+	var tmpSkipNum = document.getElementById("skipNumber").value;
+	if(tmpSkipNum.match(/[0-9]*/)) {
+		for(var i = 0; i < tmpSkipNum; i++) {
+			updateWorld();
+		}
+	}
 	drawWorld();
 }
 function updateWorld() {
