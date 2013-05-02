@@ -39,7 +39,7 @@ function generateRandomNumber(min, max) {
 }
 
 //animalコンストラクタの定義
-function animal(x, y, direction, initialEnergy) {
+function Animal(x, y, direction, initialEnergy) {
 	this.positionX = x;
 	this.positionY = y;
 	this.directionNumber = direction;
@@ -55,7 +55,7 @@ function animal(x, y, direction, initialEnergy) {
 
 //グローバル変数animals
 var animals = new Array();
-animals[0] = new animal(50, 15, generateRandomNumber(0, 7), 200);
+animals[0] = new Animal(50, 15, generateRandomNumber(0, 7), 200);
 
 function drawWorld() {
 	var world = new Array();
@@ -183,7 +183,7 @@ function eat(animal) {
 function reproduce(animal) {
 	if(animal.energy >= 200) {
 		animal.energy /= 2;
-		var child = new animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
+		var child = new Animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
 		animals.push(child);
 	}
 }
