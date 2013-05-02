@@ -18,6 +18,7 @@ for(var y = 0; y < 30; y++) {
 	plants[y] = new Array();
 }
 
+//min以上、max以下の乱数を生成
 function generateRandomNumber(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
