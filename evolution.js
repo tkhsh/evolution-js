@@ -183,6 +183,11 @@ function reproduce(animal) {
 
 		//子供を生む
 		var child = new Animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
+
+		//遺伝子の突然変異
+		var tmpSelectedGene = generateRandomNumber(0, 7);
+		child.gene[tmpSelectedGene] += generateRandomNumber(-1, 1);
+		
 		animals.push(child);
 	}
 }
