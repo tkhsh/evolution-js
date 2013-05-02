@@ -10,6 +10,7 @@ function updateWorld() {
 	for(var i = 0; i < animals.length; i++) {
 		if(animals[i].energy <= 0) {
 			animals.splice(i, 1);
+			i -= 1;
 		}
 	}
 
