@@ -46,7 +46,12 @@ function Animal(x, y, direction, initialEnergy, arrayGene) {
 	this.positionY = y;
 	this.directionNumber = direction;
 	this.energy = initialEnergy;
-	this.gene = arrayGene;
+
+	//遺伝子のコピー
+	this.gene = new Array(8);
+	for(var i = 0; i < 8; i++) {
+		this.gene[i] = arrayGene[i];
+	}
 }
 
 //グローバル変数animals
