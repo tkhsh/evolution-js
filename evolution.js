@@ -7,6 +7,12 @@ function skipDay() {
 		}
 	}
 	drawWorld();
+
+	//animalsの状態
+	for(var i = 0; i < animals.length; i++) {
+		console.log("number:" + i + " X:" + animals[i].positionX + " Y:" + animals[i].positionY + " direction:" + animals[i].directionNumber +" energy:"+ animals[i].energy + " gene:" + animals[i].gene);
+	}
+	console.log("");
 }
 function updateWorld() {
 	//一日分のシミュレーションを進める
