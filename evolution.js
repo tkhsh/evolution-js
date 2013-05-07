@@ -41,23 +41,25 @@ function generateRandomNumber(min, max) {
 }
 
 //animalコンストラクタの定義
-function Animal(x, y, direction, initialEnergy) {
+function Animal(x, y, direction, initialEnergy, arrayGene) {
 	this.positionX = x;
 	this.positionY = y;
 	this.directionNumber = direction;
 	this.energy = initialEnergy;
-
-	//geneの初期化
-	var tmpGene = new Array(8);
-	for(var i = 0; i < 8; i++) {
-		tmpGene[i] = generateRandomNumber(1, 10);
-	}
-	this.gene = tmpGene;
+	this.gene = arrayGene;
 }
 
 //グローバル変数animals
 var animals = new Array();
-animals[0] = new Animal(50, 15, generateRandomNumber(0, 7), 200);
+
+//geneの初期化
+var tmpGene = new Array(8);
+for(var i = 0; i < 8; i++) {
+	tmpGene[i] = generateRandomNumber(1, 10);
+}
+
+//animalsの初期化
+animals[0] = new Animal(50, 15, generateRandomNumber(0, 7), 200, tmpGene);
 
 function drawWorld() {
 	var world = new Array();
@@ -187,10 +189,7 @@ function reproduce(animal) {
 		animal.energy = Math.floor(tmpEnergy);
 
 		//子供を生む
-		var child = new Animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy);
-
-		//親の遺伝子をコピー
-		child.gene = animal.gene;
+		var child = new Animal(animal.positionX, animal.positionY, generateRandomNumber(0, 7), animal.energy, animal.gene);
 
 		//遺伝子の突然変異
 		var tmpSelectedGene = generateRandomNumber(0, 7);
