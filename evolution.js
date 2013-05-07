@@ -1,11 +1,14 @@
 function skipDay() {
 	//updateWorldとdrawWorldを呼ぶ
 	var tmpSkipNum = document.getElementById("skipNumber").value;
-	if(tmpSkipNum.match(/[0-9]*/)) {
-		for(var i = 0; i < tmpSkipNum; i++) {
+	var skipNumber = parseInt(tmpSkipNum);
+	console.log("skip:" + skipNumber);
+	if(skipNumber != NaN) {
+		for(var i = 0; i < skipNumber; i++) {
 			updateWorld();
 		}
 	}
+
 	drawWorld();
 
 	//animalsの状態
