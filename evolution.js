@@ -52,14 +52,16 @@ function Animal(x, y, direction, initialEnergy, arrayGene) {
 //グローバル変数animals
 var animals = new Array();
 
-//geneの初期化
-var tmpGene = new Array(8);
-for(var i = 0; i < 8; i++) {
-	tmpGene[i] = generateRandomNumber(1, 10);
-}
+function initAnimals() {
+	//geneの初期化
+	var tmpGene = new Array(8);
+	for(var i = 0; i < 8; i++) {
+		tmpGene[i] = generateRandomNumber(1, 10);
+	}
 
-//animalsの初期化
-animals[0] = new Animal(50, 15, generateRandomNumber(0, 7), 200, tmpGene);
+	//animalsの初期化
+	animals[0] = new Animal(50, 15, generateRandomNumber(0, 7), 200, tmpGene);
+}
 
 function drawWorld() {
 	var world = new Array();
