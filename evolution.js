@@ -37,6 +37,18 @@ function updateWorld() {
 	addPlants();
 }
 
+//タイマーを入れるためのグローバル変数	
+var autoTimer;
+//自動的にシミュレーションをすすめる
+function autoSkip(cb) {
+	if(cb.checked == true) {
+		autoTimer = setInterval("skipDay()", 1000);
+	} else {
+		console.log(cb.checked);
+		clearInterval(autoTimer);
+	}
+}
+
 //グローバル変数plants
 var plants = new Array();
 //plantsの初期化
