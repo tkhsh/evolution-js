@@ -41,7 +41,7 @@ function updateWorld() {
 var autoTimer;
 //自動的にシミュレーションをすすめる
 function autoSkip(cb) {
-	if(cb.checked == true) {
+	if(cb.checked) {
 		autoTimer = setInterval(skipDay, 1000);
 	} else {
 		console.log(cb.checked);
