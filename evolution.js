@@ -42,7 +42,7 @@ var autoTimer;
 //自動的にシミュレーションをすすめる
 function autoSkip(cb) {
 	if(cb.checked == true) {
-		autoTimer = setInterval("skipDay()", 1000);
+		autoTimer = setInterval(skipDay, 1000);
 	} else {
 		console.log(cb.checked);
 		clearInterval(autoTimer);
