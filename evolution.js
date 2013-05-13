@@ -97,7 +97,7 @@ function drawWorld() {
 	for(var y = 0; y < 30; y++) {
 		world[y] = new Array();
 		for(var x = 0; x < 100; x++) {
-			if(plants[y][x] == "*") {
+			if(plants[y][x]) {
 				world[y][x] = "*";
 			} else {
 				world[y][x] = " ";
@@ -123,12 +123,12 @@ function addPlants() {
 	//世界全体の植物
 	var worldY = generateRandomNumber(0, 29);
 	var worldX = generateRandomNumber(0, 99);
-	plants[worldY][worldX] = "*";
+	plants[worldY][worldX] = true;
 
 	//ジャングルの植物
 	var jungleY = generateRandomNumber(10, 19);
 	var jungleX = generateRandomNumber(45, 54);
-	plants[jungleY][jungleX] = "*";
+	plants[jungleY][jungleX] = true;
 }
 
 function move(animal) {
