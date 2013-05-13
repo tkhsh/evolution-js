@@ -28,7 +28,10 @@ function updateWorld() {
 		}
 	}
 
-	for(var i = 0; i < animals.length; i++) {
+	//reproduceを開始する前のanimalsの長さ
+	var firstAnimalLength = animals.length;
+	//一日の動物の行動
+	for(var i = 0; i < firstAnimalLength; i++) {
 		turn(animals[i]);
 		move(animals[i]);
 		eat(animals[i]);
