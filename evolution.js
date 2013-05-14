@@ -28,10 +28,10 @@ function updateWorld() {
 		}
 	}
 
-	//reproduceを開始する前のanimalsの長さ
-	var firstAnimalLength = animals.length;
+	//生まれた子はその日のうちに行動しないため、親の数を記録する。
+	var parentAnimals = animals.length;
 	//一日の動物の行動
-	for(var i = 0; i < firstAnimalLength; i++) {
+	for(var i = 0; i < parentAnimals; i++) {
 		turn(animals[i]);
 		move(animals[i]);
 		eat(animals[i]);
