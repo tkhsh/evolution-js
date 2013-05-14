@@ -206,8 +206,8 @@ function turn(animal) {
 }
 
 function eat(animal) {
-	if(plants[animal.positionY][animal.positionX] == "*") {
-		plants[animal.positionY][animal.positionX] = "";
+	if(plants[animal.positionY][animal.positionX]) {
+		plants[animal.positionY][animal.positionX] = false;
 		animal.energy += 80;
 	}
 }
