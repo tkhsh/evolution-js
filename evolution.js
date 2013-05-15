@@ -132,39 +132,24 @@ function addPlants() {
 }
 
 function move(animal) {
-	switch(animal.directionNumber) {
-		case 0:
-			animal.positionX += -1;
-			animal.positionY += 1;
-			break;
-		case 1:
-			animal.positionX += 0;
-			animal.positionY += 1;
-			break;
-		case 2:
-			animal.positionX += 1;
-			animal.positionY += 1;
-			break;
-		case 3:
-			animal.positionX += 1;
-			animal.positionY += 0;
-			break;
-		case 4:
-			animal.positionX += 1;
-			animal.positionY += -1;
-			break;
-		case 5:
-			animal.positionX += 0;
-			animal.positionY += -1;
-			break;
-		case 6:
-			animal.positionX += -1;
-			animal.positionY += -1;
-			break;
-		case 7:
-			animal.positionX += -1;
-			animal.positionY += 0;
-			break;
+	for(var i = 0; i < animal.directionNumber; i++) {
+		var tmpX = -1;
+		var tmpY = 1;
+		
+		if(i = 0) {
+			//何もしない
+		}else if(i < 3) {
+			tmpX += 1;
+		} else if (i < 5) {
+			tmpY -= 1;
+		} else if (i < 7) {
+			tmpX -= 1;
+		} else {
+			tmpY += 1;
+		}
+
+		animal.positionX = tmpX;
+		animal.positionY = tmpY;
 	}
 
 	//エネルギーの消費
