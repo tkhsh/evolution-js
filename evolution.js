@@ -132,11 +132,11 @@ function addPlants() {
 }
 
 function move(animal) {
+	
+	var tmpX = -1;
+	var tmpY = 1;
 	for(var i = 0; i < animal.directionNumber; i++) {
-		var tmpX = -1;
-		var tmpY = 1;
-		
-		if(i = 0) {
+		if(i == 0) {
 			//何もしない
 		}else if(i < 3) {
 			tmpX += 1;
@@ -147,10 +147,9 @@ function move(animal) {
 		} else {
 			tmpY += 1;
 		}
-
-		animal.positionX = tmpX;
-		animal.positionY = tmpY;
 	}
+	animal.positionX += tmpX;
+	animal.positionY += tmpY;
 
 	//エネルギーの消費
 	animal.energy -= 1;
