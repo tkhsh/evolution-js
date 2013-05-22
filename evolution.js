@@ -132,24 +132,26 @@ function addPlants() {
 }
 
 function move(animal) {
-	
-	var tmpX = -1;
-	var tmpY = 1;
-	for(var i = 0; i < animal.directionNumber; i++) {
-		if(i == 0) {
-			//何もしない
-		}else if(i < 3) {
-			tmpX += 1;
-		} else if (i < 5) {
-			tmpY -= 1;
-		} else if (i < 7) {
-			tmpX -= 1;
-		} else {
-			tmpY += 1;
-		}
+
+	function Direction(posX, posY) {
+			this.positionX = posX;
+			this.positionY = posY;
 	}
-	animal.positionX += tmpX;
-	animal.positionY += tmpY;
+
+	var MovePatterns = [
+					  new Direction(-1, 1),
+					  new Direction(0, 1), 
+					  new Direction(1, 1),
+					  new Direction(1, 0), 
+					  new Direction(1, -1), 
+					  new Direction(0, -1), 
+					  new Direction(-1, -1), 
+					  new Direction(-1, 0)
+					];
+
+	var selectedDirection = MovePatterns[animal.directionNumber];
+	animal.positionX += selectedDirection.positionX;
+	animal.positionY += selectedDirection.positionY;
 
 	//エネルギーの消費
 	animal.energy -= 1;
