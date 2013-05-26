@@ -133,25 +133,20 @@ function addPlants() {
 
 function move(animal) {
 
-	function Direction(posX, posY) {
-			this.positionX = posX;
-			this.positionY = posY;
-	}
-
 	var MovePatterns = [
-					  new Direction(-1, 1),
-					  new Direction(0, 1), 
-					  new Direction(1, 1),
-					  new Direction(1, 0), 
-					  new Direction(1, -1), 
-					  new Direction(0, -1), 
-					  new Direction(-1, -1), 
-					  new Direction(-1, 0)
-					];
+				  {dx: -1, dy:  1},
+				  {dx:  0, dy:  1}, 
+				  {dx:  1, dy:  1},
+				  {dx:  1, dy:  0}, 
+				  {dx:  1, dy: -1}, 
+				  {dx:  0, dy: -1}, 
+				  {dx: -1, dy: -1}, 
+				  {dx:  1, dy:  0}
+				];
 
 	var selectedDirection = MovePatterns[animal.directionNumber];
-	animal.positionX += selectedDirection.positionX;
-	animal.positionY += selectedDirection.positionY;
+	animal.positionX += selectedDirection.dx;
+	animal.positionY += selectedDirection.dy;
 
 	//エネルギーの消費
 	animal.energy -= 1;
