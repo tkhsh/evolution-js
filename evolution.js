@@ -131,9 +131,7 @@ function addPlants() {
 	plants[jungleY][jungleX] = true;
 }
 
-function move(animal) {
-
-	var MovePatterns = [
+var MovePatterns = [
 				  {dx: -1, dy:  1},
 				  {dx:  0, dy:  1}, 
 				  {dx:  1, dy:  1},
@@ -143,6 +141,8 @@ function move(animal) {
 				  {dx: -1, dy: -1}, 
 				  {dx:  1, dy:  0}
 				];
+
+function move(animal) {
 
 	var selectedDirection = MovePatterns[animal.directionNumber];
 	animal.positionX += selectedDirection.dx;
