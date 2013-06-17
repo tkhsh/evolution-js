@@ -98,7 +98,7 @@ function drawWorld() {
 		world[y] = new Array();
 		for(var x = 0; x < 100; x++) {
 			if(plants[y][x]) {
-				world[y][x] = "*";
+				world[y][x] = "<span class='plant'>*</span>";
 			} else {
 				world[y][x] = " ";
 			}
@@ -108,7 +108,7 @@ function drawWorld() {
 	
 	//animalsを追加
 	for(var i = 0; i < animals.length; i++) {
-		world[animals[i].positionY][animals[i].positionX] = "M";
+		world[animals[i].positionY][animals[i].positionX] = "<span class='animal'>M</span>";
 	}
 
 	//textを表示する処理
@@ -117,6 +117,10 @@ function drawWorld() {
 		worldText += world[y].join("");
 	}
 	document.getElementById("world").innerHTML = worldText;
+
+	//植物と動物の色わけ（動物はblue。植物はgreen）
+	$('.animal').css('color', 'blue');
+	$('.plant').css('color', 'green');
 }
 
 function addPlants() {
