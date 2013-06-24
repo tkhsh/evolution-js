@@ -117,10 +117,6 @@ function drawWorld() {
 		worldText += world[y].join("");
 	}
 	document.getElementById("world").innerHTML = worldText;
-
-	//植物と動物の色わけ（動物はblue。植物はgreen）
-	$('.animal').css('color', 'blue');
-	$('.plant').css('color', 'green');
 }
 
 function addPlants() {
